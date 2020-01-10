@@ -6,9 +6,12 @@ module.exports = async function(req, res, next) {
 
   try {
     const confirm_user = await User.findById(user_id);
-    if (confirm_user) next();
+    if (confirm_user) {
+      next();
+    } else {
+      res.status(400).send('User not found! Access Denied')
+    }
 
-    return res.status(400).send('User not found! Access Denied')
   } catch (err) {
       res.status(400).send('Invalid User');
   }

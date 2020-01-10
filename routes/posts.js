@@ -9,9 +9,8 @@ router.get('/', async (req, res) => {
 
   try {
     const { user: created_by } = req.headers;
-  
+    
     const { roles } = await User.findOne({_id: created_by});
-
     if (!roles.includes("Admin")) {
       posts = await Post.find({ created_by });
     }  else {
