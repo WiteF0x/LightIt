@@ -15,7 +15,7 @@ const PostSchema = Schema({
     default: Date.now,
   },
   created_by: {
-    type: String,
+    type: Schema.ObjectId,
     required: true,
   }
 });

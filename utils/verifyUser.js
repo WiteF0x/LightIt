@@ -1,4 +1,4 @@
-const User = require('../modules/User');
+const User = require('../models/User');
 
 module.exports = async function(req, res, next) {
   const user_id = req.header('user');

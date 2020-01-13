@@ -33,7 +33,7 @@ const registerValidation = data => (
     postCode: Joi.number(),
   })
   .validate(data)
-)
+);
 
 module.exports.postValidation = postValidation;
 module.exports.registerValidation = registerValidation;
